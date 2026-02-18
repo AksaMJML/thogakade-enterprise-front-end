@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
+import { RouterOutlet,  RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterOutlet, RouterLinkWithHref],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
