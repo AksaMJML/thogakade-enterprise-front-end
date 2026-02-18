@@ -1,40 +1,54 @@
-<section class="home-page">
-	<div class="bg-orb orb-left"></div>
-	<div class="bg-orb orb-right"></div>
+<section class="home">
+	<div class="home__container">
+		<div class="home__card">
+			<header class="home__topbar">
+				<div class="brand">
+					<span class="brand__mark" aria-hidden="true">TK</span>
+					<div class="brand__text">
+						<p class="brand__name">ThogaKade</p>
+						<p class="brand__sub">Order Management</p>
+					</div>
+				</div>
+				<span class="badge">OMS</span>
+			</header>
 
-	<main class="home-card">
-		<header class="home-header">
-			<div class="brand">
-				<span class="brand-dot"></span>
-				<span class="brand-name">ThogaKade</span>
+			<div class="home__grid">
+				<section class="hero" aria-label="Home introduction">
+					<p class="hero__kicker">Modern • Fast • Reliable</p>
+					<h1 class="hero__title">Manage orders with clarity and speed.</h1>
+					<p class="hero__desc">
+						Track order status, streamline fulfillment, and keep customer & item records organized—built for day-to-day operations.
+					</p>
+
+					<div class="hero__actions">
+						<a class="btn btn--primary" routerLink="/login">Go to Login</a>
+						<p class="hero__note">Secure login required to continue.</p>
+					</div>
+				</section>
+
+				<section class="features" aria-label="Key features">
+					<article class="feature">
+						<p class="feature__tag">Tracking</p>
+						<h3 class="feature__title">Order Status</h3>
+						<p class="feature__desc">Placed → Processing → Dispatched → Delivered.</p>
+					</article>
+					<article class="feature">
+						<p class="feature__tag">Fulfillment</p>
+						<h3 class="feature__title">Faster Dispatch</h3>
+						<p class="feature__desc">Clear steps to reduce mistakes and delays.</p>
+					</article>
+					<article class="feature">
+						<p class="feature__tag">Records</p>
+						<h3 class="feature__title">Unified Data</h3>
+						<p class="feature__desc">Customers, items, and transactions in one place.</p>
+					</article>
+					<article class="feature">
+						<p class="feature__tag">Control</p>
+						<h3 class="feature__title">Clean UI</h3>
+						<p class="feature__desc">A consistent theme to stay focused on work.</p>
+					</article>
+				</section>
 			</div>
-			<span class="brand-badge">OMS</span>
-		</header>
-
-		<p class="kicker">ORDER MANAGEMENT SYSTEM</p>
-		<h1>Modern Control for Every Order</h1>
-		<p class="highlight">Peacock-blue UI • clean workflows • reliable operations</p>
-		<p class="subtitle">
-			Track orders, process fulfillment, and keep operations smooth from a single platform.
-		</p>
-
-		<div class="feature-grid">
-			<article class="feature-item">
-				<h3>Smart Tracking</h3>
-				<p>Monitor order status from placed to delivered in real time.</p>
-			</article>
-			<article class="feature-item">
-				<h3>Fast Fulfillment</h3>
-				<p>Move from approval to dispatch with clear, streamlined workflows.</p>
-			</article>
-			<article class="feature-item">
-				<h3>Unified Records</h3>
-				<p>Keep customers, items, and transactions connected and searchable.</p>
-			</article>
 		</div>
-
-		<div class="action-row">
-			<a class="btn-primary" routerLink="/login">Login</a>
-		</div>
-	</main>
+	</div>
 </section>
