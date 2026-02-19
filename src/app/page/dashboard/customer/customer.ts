@@ -1,6 +1,6 @@
 import { NgForOf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CustomerModel } from '../../../../model/type';
 
 @Component({
@@ -9,17 +9,21 @@ import { CustomerModel } from '../../../../model/type';
   templateUrl: './customer.html',
   styleUrl: './customer.css',
 })
-export class Customer {
+export class Customer implements OnInit{
 
   customerList: Array<CustomerModel> = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient , private cdr:ChangeDetectorRef) {
+    
+  }
+  ngOnInit(): void {
     this.getAll();
   }
 
   getAll(){
     this.http.get<CustomerModel[]>('http://localhost:8080/customer/getAll').subscribe(data => {
       this.customerList = data;
+      this.cdr.detectChanges();
     });
   }
   
