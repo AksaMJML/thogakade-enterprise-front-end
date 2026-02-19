@@ -1,1 +1,74 @@
-<p>customer works!</p>
+<div class="space-y-8">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Customer Management</h1>
+            <p class="text-sm text-gray-500">Manage all registered customers</p>
+        </div>
+
+        <a routerLink="/dashboard/customer/add"
+           class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition">
+            + Add Customer
+        </a>
+    </div>
+
+    <!-- SEARCH + FILTER -->
+    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+        <input type="text"
+               placeholder="Search by name, phone, or email..."
+               class="w-full md:w-1/3 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+
+        <select class="px-4 py-2 border rounded-lg focus:outline-none">
+            <option>All Status</option>
+            <option>Active</option>
+            <option>Inactive</option>
+        </select>
+
+    </div>
+
+    <!-- CUSTOMER TABLE -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Phone</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Loyalty Points</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">C001</td>
+                    <td class="px-6 py-4 font-medium text-gray-800">John Doe</td>
+                    <td class="px-6 py-4">0771234567</td>
+                    <td class="px-6 py-4">john@email.com</td>
+                    <td class="px-6 py-4">120</td>
+                    <td class="px-6 py-4">
+                        <span class="bg-green-100 text-green-700 px-2 py-1 text-xs rounded-full">
+                            Active
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center space-x-2">
+
+                        <button class="text-blue-600 hover:underline text-sm">View</button>
+                        <button class="text-yellow-600 hover:underline text-sm">Edit</button>
+                        <button class="text-red-600 hover:underline text-sm">Delete</button>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
