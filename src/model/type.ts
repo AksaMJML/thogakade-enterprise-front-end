@@ -1,7 +1,7 @@
 export interface CustomerModel{
     id: String;
     title: string;
-    custName: string;
+    name: string;
     dob: object;
     salary: number;
     address: string;
