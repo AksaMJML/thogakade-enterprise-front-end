@@ -34,6 +34,7 @@
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
                 <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">#</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Title</th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
@@ -48,7 +49,8 @@
 
             <tbody class="bg-white divide-y divide-gray-200">
 
-                <tr *ngFor="let customer of customerList" class="hover:bg-gray-50 transition">
+                <tr *ngFor="let customer of customerList index as i" class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">{{i+1}}</td>
                     <td class="px-6 py-4">{{customer.id}}</td>
                     <td class="px-6 py-4 font-medium text-gray-800">{{customer.title}}</td>
                     <td class="px-6 py-4">{{customer.name}}</td>
