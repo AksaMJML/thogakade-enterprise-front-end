@@ -7,14 +7,10 @@
             <p class="text-sm text-gray-500">Manage all registered customers</p>
         </div>
 
-        <a routerLink="/dashboard/customer/add"
-            class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition">
-            + Add Customer
-        </a>
     </div>
 
     <!-- ADD CUSTOMER FORM -->
-    <form class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-6">
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-6">
 
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -28,7 +24,7 @@
                     Clear
                 </button>
                 <button type="submit"
-                        class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition">
+                        class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition" (click)="addCustomer()">
                     Save Customer
                 </button>
             </div>
@@ -38,13 +34,13 @@
 
             <div>
                 <label for="customerId" class="block text-sm font-medium text-gray-600">Customer ID</label>
-                <input id="customerId" name="customerId" type="text" placeholder="C00-001"
+                <input id="customerId" [(ngModel)]="customerObj.id" name="customerId" type="text" placeholder="C00-001"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
             </div>
 
             <div>
                 <label for="title" class="block text-sm font-medium text-gray-600">Title</label>
-                <select id="title" name="title"
+                <select id="title" [(ngModel)]="customerObj.title" name="title"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
                     <option value="" selected disabled>Select title</option>
                     <option>Mr</option>
@@ -56,43 +52,43 @@
 
             <div>
                 <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
-                <input id="name" name="name" type="text" placeholder="John Doe"
+                <input id="name" [(ngModel)]="customerObj.name" name="name" type="text" placeholder="John Doe"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
             </div>
 
             <div>
                 <label for="dob" class="block text-sm font-medium text-gray-600">DOB</label>
-                <input id="dob" name="dob" type="date"
+                <input id="dob" [(ngModel)]="customerObj.dob" name="dob" type="date"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
             </div>
 
             <div>
                 <label for="salary" class="block text-sm font-medium text-gray-600">Salary</label>
-                <input id="salary" name="salary" type="number" placeholder="100000"
+                <input id="salary" [(ngModel)]="customerObj.salary" name="salary" type="number" placeholder="100000"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
             </div>
 
             <div class="lg:col-span-3">
                 <label for="address" class="block text-sm font-medium text-gray-600">Address</label>
-                <textarea id="address" name="address" rows="3" placeholder="No 12, Main Street"
+                <textarea id="address" [(ngModel)]="customerObj.address" name="address" rows="3" placeholder="No 12, Main Street"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
             </div>
 
             <div>
                 <label for="city" class="block text-sm font-medium text-gray-600">City</label>
-                <input id="city" name="city" type="text" placeholder="Colombo"
+                <input id="city" [(ngModel)]="customerObj.city" name="city" type="text" placeholder="Colombo"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
             </div>
 
             <div>
                 <label for="province" class="block text-sm font-medium text-gray-600">Province</label>
-                <input id="province" name="province" type="text" placeholder="Western"
+                <input id="province" [(ngModel)]="customerObj.province" name="province" type="text" placeholder="Western"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
             </div>
 
             <div>
                 <label for="postalCode" class="block text-sm font-medium text-gray-600">Postal Code</label>
-                <input id="postalCode" name="postalCode" type="text" placeholder="00100"
+                <input id="postalCode" [(ngModel)]="customerObj.postalCode" name="postalCode" type="text" placeholder="00100"
                     class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
             </div>
 
@@ -109,7 +105,7 @@
             </button>
         </div>
 
-    </form>
+    </div>
 
     <!-- SEARCH + FILTER -->
     <div
