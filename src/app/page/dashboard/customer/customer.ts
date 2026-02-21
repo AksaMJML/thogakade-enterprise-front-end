@@ -1,19 +1,20 @@
 import { CommonModule, NgForOf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CustomerModel } from '../../../../model/type';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { CustomerModel } from '../../../../model/type';
 
 @Component({
   selector: 'app-customer',
-  imports: [NgForOf , ReactiveFormsModule, FormsModule , CommonModule],
+  imports: [NgForOf, ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './customer.html',
   styleUrl: './customer.css',
 })
-export class Customer implements OnInit{
+export class Customer implements OnInit {
 
   customerList: Array<CustomerModel> = [];
-  customerObj : CustomerModel = {
+  customerObj: CustomerModel = {
     id: '',
     title: '',
     name: '',
@@ -25,24 +26,33 @@ export class Customer implements OnInit{
     postalCode: ''
   }
 
-  constructor(private http: HttpClient , private cdr:ChangeDetectorRef) {
-    
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {
+
   }
   ngOnInit(): void {
     this.getAll();
   }
 
-  addCustomer(){
-    // this.http.post("http:localhost:8080/customer/add").subscribe(data => {
-
-    // })
+  addCustomer(): void {
+    console.log(this.customerObj);
+    this.http.post("http://localhost:8080/customer/add", this.customerObj).subscribe(data => {
+      console.log(data);
+      if (data === true) {
+        Swal.fire({
+          title: "Good job! "+this.customerObj.name+" successfully saved!",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+      }
+      this.getAll();
+    })
   }
 
-  getAll(){
+  getAll() {
     this.http.get<CustomerModel[]>('http://localhost:8080/customer/getAll').subscribe(data => {
       this.customerList = data;
       this.cdr.detectChanges();
     });
   }
-  
+
 }
