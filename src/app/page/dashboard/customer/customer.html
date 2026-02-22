@@ -94,17 +94,6 @@
 
         </div>
 
-        <!-- <div class="flex sm:hidden items-center justify-end gap-3">
-            <button type="reset"
-                    class="px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition">
-                Clear
-            </button>
-            <button type="submit"
-                    class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition">
-                Save Customer
-            </button>
-        </div> -->
-
     </div>
 
     <!-- SEARCH + FILTER -->
@@ -161,8 +150,8 @@
                     </td>
                     <td class="px-6 py-4 text-center space-x-2">
 
-                        <button class="text-blue-600 hover:underline text-sm">View</button>
-                        <button class="text-yellow-600 hover:underline text-sm">Edit</button>
+                        <button class="text-blue-600 hover:underline text-sm" (click)="viewCustomer(customer)">View</button>
+                        <button class="text-yellow-600 hover:underline text-sm" (click)="updateCustomer()">Edit</button>
                         <button class="text-red-600 hover:underline text-sm">Delete</button>
 
                     </td>

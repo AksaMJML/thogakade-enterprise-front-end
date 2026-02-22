@@ -48,6 +48,23 @@ export class Customer implements OnInit {
     })
   }
 
+  // viewCustomer(customer){
+  //   this.customerObj.id = customerId;
+  // }
+
+  updateCustomer(){
+    this.http.put("http://localhost:8080/customer/update" , this.customerObj).subscribe(data => {
+      if(data == true){
+        Swal.fire({
+          title: "Good job! "+this.customerObj.id+" successfully Updated!",
+          text: "You clicked the button!",
+          icon: "success"
+        });
+      }
+    })
+    this.getAll();
+  }
+
   getAll() {
     this.http.get<CustomerModel[]>('http://localhost:8080/customer/getAll').subscribe(data => {
       this.customerList = data;
