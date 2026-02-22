@@ -1,1 +1,165 @@
-<p>customer works!</p>
+<div class="space-y-8">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Customer Management</h1>
+            <p class="text-sm text-gray-500">Manage all registered customers</p>
+        </div>
+
+    </div>
+
+    <!-- ADD CUSTOMER FORM -->
+    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-6">
+
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-800">Add Customer</h2>
+                <p class="text-sm text-gray-500">Fill in details to create a new customer</p>
+            </div>
+
+            <div class="hidden sm:flex items-center gap-3">
+                <button type="reset"
+                        class="px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition">
+                    Clear
+                </button>
+                <button type="submit"
+                        class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition" (click)="addCustomer()">
+                    Save Customer
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <div>
+                <label for="customerId" class="block text-sm font-medium text-gray-600">Customer ID</label>
+                <input id="customerId" [(ngModel)]="customerObj.id" name="customerId" type="text" placeholder="C00-001"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+            </div>
+
+            <div>
+                <label for="title" class="block text-sm font-medium text-gray-600">Title</label>
+                <select id="title" [(ngModel)]="customerObj.title" name="title"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+                    <option value="" selected disabled>Select title</option>
+                    <option>Mr</option>
+                    <option>Mrs</option>
+                    <option>Miss</option>
+                    <option>Dr</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
+                <input id="name" [(ngModel)]="customerObj.name" name="name" type="text" placeholder="John Doe"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+            </div>
+
+            <div>
+                <label for="dob" class="block text-sm font-medium text-gray-600">DOB</label>
+                <input id="dob" [(ngModel)]="customerObj.dob" name="dob" type="date"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+            </div>
+
+            <div>
+                <label for="salary" class="block text-sm font-medium text-gray-600">Salary</label>
+                <input id="salary" [(ngModel)]="customerObj.salary" name="salary" type="number" placeholder="100000"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+            </div>
+
+            <div class="lg:col-span-3">
+                <label for="address" class="block text-sm font-medium text-gray-600">Address</label>
+                <textarea id="address" [(ngModel)]="customerObj.address" name="address" rows="3" placeholder="No 12, Main Street"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+            </div>
+
+            <div>
+                <label for="city" class="block text-sm font-medium text-gray-600">City</label>
+                <input id="city" [(ngModel)]="customerObj.city" name="city" type="text" placeholder="Colombo"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+            </div>
+
+            <div>
+                <label for="province" class="block text-sm font-medium text-gray-600">Province</label>
+                <input id="province" [(ngModel)]="customerObj.province" name="province" type="text" placeholder="Western"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+            </div>
+
+            <div>
+                <label for="postalCode" class="block text-sm font-medium text-gray-600">Postal Code</label>
+                <input id="postalCode" [(ngModel)]="customerObj.postalCode" name="postalCode" type="text" placeholder="00100"
+                    class="mt-1 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SEARCH + FILTER -->
+    <div
+        class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+        <input type="text" placeholder="Search by name, phone, or email..."
+            class="w-full md:w-1/3 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+
+        <select class="px-4 py-2 border rounded-lg focus:outline-none">
+            <option>All Status</option>
+            <option>Active</option>
+            <option>Inactive</option>
+        </select>
+
+    </div>
+
+    <!-- CUSTOMER TABLE -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">#</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Title</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">DOB</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Salary</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Address</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">City</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Province</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Postal Code</th>
+                </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+
+                <tr *ngFor="let customer of customerList index as i" class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">{{i+1}}</td>
+                    <td class="px-6 py-4">{{customer.id}}</td>
+                    <td class="px-6 py-4 font-medium text-gray-800">{{customer.title}}</td>
+                    <td class="px-6 py-4">{{customer.name}}</td>
+                    <td class="px-6 py-4">{{customer.dob}}</td>
+                    <td class="px-6 py-4">{{customer.salary}}</td>
+                    <td class="px-6 py-4">{{customer.address}}</td>
+                    <td class="px-6 py-4">{{customer.city}}</td>
+                    <td class="px-6 py-4">{{customer.province}}</td>
+                    <td class="px-6 py-4">{{customer.postalCode}}</td>
+                    <td class="px-6 py-4">
+                        <span class="bg-green-100 text-green-700 px-2 py-1 text-xs rounded-full">
+                            Active
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center space-x-2">
+
+                        <button class="text-blue-600 hover:underline text-sm" (click)="viewCustomer(customer)">View</button>
+                        <button class="text-yellow-600 hover:underline text-sm" (click)="updateCustomer()">Edit</button>
+                        <button class="text-red-600 hover:underline text-sm">Delete</button>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
