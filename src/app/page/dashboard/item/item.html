@@ -1,1 +1,101 @@
-<p>item works!</p>
+<div class="space-y-8">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Product Management</h1>
+            <p class="text-sm text-gray-500">Manage all available products in the system</p>
+        </div>
+
+        <a routerLink="/dashboard/products/add"
+           class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition">
+            + Add Product
+        </a>
+    </div>
+
+    <!-- SEARCH + FILTER -->
+    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+        <input type="text"
+               placeholder="Search by name, SKU, or category..."
+               class="w-full md:w-1/3 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+
+        <div class="flex gap-3">
+            <select class="px-4 py-2 border rounded-lg focus:outline-none">
+                <option>All Categories</option>
+                <option>Beverages</option>
+                <option>Food</option>
+                <option>Household</option>
+            </select>
+
+            <select class="px-4 py-2 border rounded-lg focus:outline-none">
+                <option>All Status</option>
+                <option>In Stock</option>
+                <option>Low Stock</option>
+                <option>Out of Stock</option>
+            </select>
+        </div>
+
+    </div>
+
+    <!-- PRODUCT TABLE -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">SKU</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Product Name</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Category</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stock</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">P001</td>
+                    <td class="px-6 py-4 font-medium text-gray-800">Rice 5kg</td>
+                    <td class="px-6 py-4">Food</td>
+                    <td class="px-6 py-4">$12.00</td>
+                    <td class="px-6 py-4">25</td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="bg-green-100 text-green-700 px-2 py-1 text-xs rounded-full">
+                            In Stock
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center space-x-2">
+                        <button class="text-blue-600 hover:underline text-sm">View</button>
+                        <button class="text-yellow-600 hover:underline text-sm">Edit</button>
+                        <button class="text-red-600 hover:underline text-sm">Delete</button>
+                    </td>
+                </tr>
+
+                <!-- Low Stock Example -->
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4">P002</td>
+                    <td class="px-6 py-4 font-medium text-gray-800">Milk 1L</td>
+                    <td class="px-6 py-4">Beverages</td>
+                    <td class="px-6 py-4">$2.50</td>
+                    <td class="px-6 py-4 text-red-600 font-semibold">3</td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="bg-red-100 text-red-700 px-2 py-1 text-xs rounded-full">
+                            Low Stock
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center space-x-2">
+                        <button class="text-blue-600 hover:underline text-sm">View</button>
+                        <button class="text-yellow-600 hover:underline text-sm">Edit</button>
+                        <button class="text-red-600 hover:underline text-sm">Delete</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

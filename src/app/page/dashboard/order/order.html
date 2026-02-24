@@ -1,1 +1,102 @@
-<p>order works!</p>
+<div class="space-y-8">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Order Management</h1>
+            <p class="text-sm text-gray-500">Track and manage all sales orders</p>
+        </div>
+
+        <a routerLink="/dashboard/orders/create"
+           class="bg-[#00572e] text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition">
+            + Create Order
+        </a>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row md:items-center gap-4">
+
+        <input type="text"
+               placeholder="Search by Order ID or Customer..."
+               class="w-full md:w-1/3 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600">
+
+        <select class="px-4 py-2 border rounded-lg">
+            <option>All Status</option>
+            <option>Paid</option>
+            <option>Pending</option>
+            <option>Cancelled</option>
+        </select>
+
+        <input type="date"
+               class="px-4 py-2 border rounded-lg">
+    </div>
+
+    <!-- ORDERS TABLE -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Order ID</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Customer</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Total</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Payment</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4 font-semibold text-gray-800">#1024</td>
+                    <td class="px-6 py-4">John Doe</td>
+                    <td class="px-6 py-4">2026-02-19</td>
+                    <td class="px-6 py-4">$120.00</td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="bg-blue-100 text-blue-700 px-2 py-1 text-xs rounded-full">
+                            Card
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="bg-green-100 text-green-700 px-2 py-1 text-xs rounded-full">
+                            Paid
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center space-x-2">
+                        <button class="text-blue-600 hover:underline text-sm">View</button>
+                        <button class="text-gray-600 hover:underline text-sm">Print</button>
+                        <button class="text-red-600 hover:underline text-sm">Cancel</button>
+                    </td>
+                </tr>
+
+                <!-- Pending Example -->
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="px-6 py-4 font-semibold text-gray-800">#1025</td>
+                    <td class="px-6 py-4">Sarah Lee</td>
+                    <td class="px-6 py-4">2026-02-19</td>
+                    <td class="px-6 py-4">$85.00</td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 text-xs rounded-full">
+                            Cash
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 text-xs rounded-full">
+                            Pending
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 text-center space-x-2">
+                        <button class="text-blue-600 hover:underline text-sm">View</button>
+                        <button class="text-gray-600 hover:underline text-sm">Print</button>
+                        <button class="text-red-600 hover:underline text-sm">Cancel</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

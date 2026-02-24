@@ -1,0 +1,149 @@
+<div class="space-y-10">
+
+    <!-- HEADER -->
+    <div class="flex items-center justify-between">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-800">Dashboard</h1>
+            <p class="text-gray-500 text-sm">Welcome back 👋 Here’s what’s happening today.</p>
+        </div>
+        <span class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full">
+            Live Data
+        </span>
+    </div>
+
+    <!-- TOP ANALYTICS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Customers -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border border-gray-100">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-500 text-sm">Customers</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#00572e]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+            </div>
+            <p class="text-3xl font-bold text-gray-800 mt-2">1,240</p>
+            <p class="text-green-600 text-sm mt-2">▲ +32 this month</p>
+        </div>
+
+        <!-- Revenue -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border border-gray-100">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-500 text-sm">Revenue</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-12v2m0 16v2"/>
+                </svg>
+            </div>
+            <p class="text-3xl font-bold text-gray-800 mt-2">$8,450</p>
+            <p class="text-blue-600 text-sm mt-2">▲ 12% increase</p>
+        </div>
+
+        <!-- Orders -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border border-gray-100">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-500 text-sm">Orders</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M3 3h18l-2 13H5L3 3z"/>
+                </svg>
+            </div>
+            <p class="text-3xl font-bold text-gray-800 mt-2">540</p>
+            <p class="text-purple-600 text-sm mt-2">▲ +58 this week</p>
+        </div>
+
+        <!-- Pending -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border border-gray-100">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-500 text-sm">Pending Orders</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M12 8v4l3 3"/>
+                </svg>
+            </div>
+            <p class="text-3xl font-bold text-gray-800 mt-2">12</p>
+            <p class="text-yellow-600 text-sm mt-2">⚠ Action required</p>
+        </div>
+
+    </div>
+
+    <!-- PERFORMANCE + QUICK ACTION -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Progress Section -->
+        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 lg:col-span-2">
+            <h2 class="text-lg font-semibold text-gray-800 mb-6">Monthly Performance</h2>
+
+            <div class="space-y-5">
+
+                <div>
+                    <div class="flex justify-between text-sm mb-1">
+                        <span>Sales Target</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-600 h-2 rounded-full" style="width:75%"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between text-sm mb-1">
+                        <span>Orders Completed</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width:60%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="bg-gradient-to-br from-[#00572e] to-green-700 p-6 rounded-xl shadow-md text-white">
+            <h2 class="text-lg font-semibold mb-4">Quick Actions</h2>
+
+            <div class="space-y-3">
+                <a routerLink="/dashboard/customer"
+                   class="block bg-white text-[#00572e] text-center font-semibold py-2 rounded-lg hover:bg-gray-100 transition">
+                    + Add Customer
+                </a>
+
+                <a routerLink="/dashboard/item"
+                   class="block bg-white text-[#00572e] text-center font-semibold py-2 rounded-lg hover:bg-gray-100 transition">
+                    + Add Item
+                </a>
+
+                <a routerLink="/dashboard/order"
+                   class="block bg-white text-[#00572e] text-center font-semibold py-2 rounded-lg hover:bg-gray-100 transition">
+                    + Create Order
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- RECENT ACTIVITY WITH STATUS BADGES -->
+    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+        <h2 class="text-lg font-semibold text-gray-800 mb-6">Recent Activity</h2>
+
+        <ul class="space-y-4">
+            <li class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                <span>New customer added: <strong>John Doe</strong></span>
+                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Success</span>
+            </li>
+
+            <li class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                <span>Order #1024 moved to <strong>Processing</strong></span>
+                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">Updated</span>
+            </li>
+
+            <li class="flex justify-between items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition">
+                <span>Low stock alert: <strong>Rice 5kg</strong></span>
+                <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full">Warning</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
