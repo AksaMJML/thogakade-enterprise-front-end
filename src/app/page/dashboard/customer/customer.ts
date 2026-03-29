@@ -75,6 +75,10 @@ export class Customer implements OnInit {
     this.getAll();
   }
 
+  deleteCustomer(){
+    this.http.delete("http://localhost:8080/customer/")
+  }
+
   getAll() {
     this.http.get<CustomerModel[]>('http://localhost:8080/customer/getAll').subscribe(data => {
       this.customerList = data;

@@ -16,3 +16,11 @@ export interface CustomerModel{
     postalCode: string;
 }
 
+export interface ItemModel{
+  ItemCode : String;
+  Description : String;
+  PackSize : String;
+  UnitPrice : number;
+  QtyOnHand : number;
+}
+
