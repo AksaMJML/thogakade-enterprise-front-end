@@ -18,7 +18,7 @@ export class Customer implements OnInit {
     id: '',
     title: '',
     name: '',
-    dob: {},
+    dob: { month: 0, day: 0, year: 0 },
     salary: 0.0,
     address: '',
     city: '',
@@ -39,7 +39,7 @@ export class Customer implements OnInit {
       console.log(data);
       if (data === true) {
         Swal.fire({
-          title: "Good job! "+this.customerObj.name+" successfully saved!",
+          title: "Good job! " + this.customerObj.name + " successfully saved!",
           text: "You clicked the button!",
           icon: "success"
         });
@@ -48,21 +48,35 @@ export class Customer implements OnInit {
     })
   }
 
-  // viewCustomer(customer){
-  //   this.customerObj.id = customerId;
-  // }
+  viewCustomer(customer: CustomerModel) {
+    
 
-  updateCustomer(){
-    this.http.put("http://localhost:8080/customer/update" , this.customerObj).subscribe(data => {
-      if(data == true){
+    this.customerObj.id = customer.id;
+    this.customerObj.title = customer.title;
+    this.customerObj.name = customer.name;
+    this.customerObj.dob = customer.dob;
+    this.customerObj.salary = customer.salary;
+    this.customerObj.address = customer.address;
+    this.customerObj.city = customer.city;
+    this.customerObj.province = customer.province;
+    this.customerObj.postalCode = customer.postalCode;
+  }
+
+  updateCustomer() {
+    this.http.put("http://localhost:8080/customer/update", this.customerObj).subscribe(data => {
+      if (data == true) {
         Swal.fire({
-          title: "Good job! "+this.customerObj.id+" successfully Updated!",
+          title: "Good job! " + this.customerObj.id + " successfully Updated!",
           text: "You clicked the button!",
           icon: "success"
         });
       }
     })
     this.getAll();
+  }
+
+  deleteCustomer(){
+    this.http.delete("http://localhost:8080/customer/")
   }
 
   getAll() {
